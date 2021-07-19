@@ -38,24 +38,24 @@ void get_lex_min(std::vector<int> array_ref, std::vector<int> &min_abs_perm, int
     int size_ref = array_ref.size();
     int size_min_abs_perm = min_abs_perm.size();
     bool min_abs_perm_is_lex_smaller = false;
-    bool the_smaller_one_is_known = false;
+    bool smallest_lex_perm_is_known = false;
     int min_size = min(size_ref, size_min_abs_perm);
 
-    bool is_min_abs_perm_not_abs = false;
-    if(!is_min_abs_perm_not_abs) {
+    bool perm_is_not_abs = false;
+    if(!perm_is_not_abs) {
         min_abs_perm = array_ref;
-        is_min_abs_perm_not_abs = true;
+        perm_is_not_abs = true;
     }
 
     int index_track = 0;
-    while(!the_smaller_one_is_known && index_track < min_size) {
+    while(!smallest_lex_perm_is_known && index_track < min_size) {
         if(array_ref[index_track] > min_abs_perm[index_track]) {
             min_abs_perm_is_lex_smaller = true;
-            the_smaller_one_is_known = true;
+            smallest_lex_perm_is_known = true;
         }
         else if(array_ref[index_track] < min_abs_perm[index_track]) {
             min_abs_perm_is_lex_smaller = false;
-            the_smaller_one_is_known = true;
+            smallest_lex_perm_is_known = true;
         }
         else { index_track++; }
     }
