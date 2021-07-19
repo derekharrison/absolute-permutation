@@ -50,11 +50,11 @@ void get_lex_min(std::vector<int> array_ref, std::vector<int> &min_abs_perm, int
     int index_track = 0;
     while(!smallest_lex_perm_is_known && index_track < min_size) {
         if(array_ref[index_track] > min_abs_perm[index_track]) {
-        	perm_is_lex_smallest = true;
+            perm_is_lex_smallest = true;
             smallest_lex_perm_is_known = true;
         }
         else if(array_ref[index_track] < min_abs_perm[index_track]) {
-        	perm_is_lex_smallest = false;
+            perm_is_lex_smallest = false;
             smallest_lex_perm_is_known = true;
         }
         else { index_track++; }
